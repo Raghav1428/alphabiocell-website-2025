@@ -1,0 +1,25 @@
+.loader {
+  position: fixed; inset: 0;
+  background: #000; z-index: 999;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .7s ease;
+}
+.loader.hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+.loader h1{
+  position:absolute;
+  font-size: clamp(28px,4vw,64px);
+  color: transparent;
+  background: linear-gradient(to right, orange, orangered);
+  -webkit-background-clip: text;
+  opacity: 0;
+  animation: load 1s linear 1s both;
+}
+.loader h1:nth-child(2){ animation-delay: 2s; }
+.loader h1:nth-child(3){ animation-delay: 3s; }
+
+@keyframes load {
+  0%{opacity:0}10%{opacity:1}90%{opacity:1}100%{opacity:0}
+}

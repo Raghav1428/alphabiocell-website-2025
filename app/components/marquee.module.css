@@ -1,0 +1,241 @@
+.page2 { 
+  position: relative; 
+  min-height: 100vh; 
+  background: #EFEAE3; 
+  padding: 8vw 0; 
+  color: #1a1a1a; 
+  overflow: hidden;
+}
+
+.moving { 
+  white-space: nowrap; 
+  overflow-x: auto; 
+  position: relative;
+  z-index: 10;
+}
+
+.moving::-webkit-scrollbar { 
+  display: none; 
+}
+
+.con { 
+  display: inline-block; 
+  white-space: nowrap; 
+  animation: move 10s linear infinite; 
+}
+
+.con h1 { 
+  display: inline-block; 
+  font-size: 9vw; 
+}
+
+.dot { 
+  display: inline-block; 
+  width: 70px; 
+  height: 70px; 
+  border-radius: 50%; 
+  background: #FE320A; 
+  margin: 1vw 2vw; 
+}
+
+@keyframes move { 
+  from { transform: translateX(0); } 
+  to { transform: translateX(-100%); } 
+}
+
+.contentSection { 
+  position: relative; 
+  z-index: 1; 
+  padding: 6vw 4.5vw; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 4vw; 
+}
+
+.headingWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2vw;
+}
+
+.mainHeading { 
+  font-size: 2.8vw; 
+  line-height: 3.4vw; 
+  font-weight: 400; 
+  color: #1a1a1a; 
+  margin: 0; 
+  text-align: center; 
+  max-width: 85%; 
+  margin: 0 auto; 
+  position: relative;
+  z-index: 2;
+}
+
+.sideBySideLayout { 
+  display: flex; 
+  gap: 6vw; 
+  align-items: flex-start; 
+}
+
+.bioSection { 
+  flex: 0.6; 
+  display: flex; 
+  flex-direction: column; 
+  padding-top: 2vw;
+}
+
+.bioText { 
+  font-size: 1.6vw; 
+  line-height: 2vw; 
+  font-weight: 300; 
+  color: #666; 
+  margin: 0; 
+}
+
+.missionSection { 
+  flex: 1.5; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.5vw; 
+  padding: 0; 
+}
+
+.missionSection h3 { 
+  font-size: 3vw; 
+  font-weight: 400; 
+  color: #1a1a1a; 
+  margin: 0; 
+}
+
+.missionItems { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1vw; 
+}
+
+.missionItem { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 2vw; 
+}
+
+.missionDot { 
+  width: 12px; 
+  height: 12px; 
+  border-radius: 50%; 
+  background: #FE320A; 
+  margin-top: 0.8vw; 
+  flex-shrink: 0; 
+}
+
+.missionItem p { 
+  font-size: 1.8vw; 
+  line-height: 2.2vw; 
+  font-weight: 300; 
+  color: #1a1a1a; 
+  margin: 0; 
+}
+
+.gooey {
+  position: absolute; 
+  top: -10%; 
+  left: 50%;
+  transform: translateX(-55%);
+  width: 32vw; 
+  height: 32vw; 
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+  filter: blur(25px);
+  animation: g 8s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes g {
+  from { 
+    filter: blur(20px); 
+    transform: translateX(-50%) translate(10%, -10%) skew(0deg);
+  }
+  to { 
+    filter: blur(30px); 
+    transform: translateX(-50%) translate(-10%, 10%) skew(-12deg);
+  }
+}
+
+.bioHighlight {
+  color: #ff2a00;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .con h1 { 
+    font-size: 15vw; 
+  }
+  
+  .dot { 
+    width: 25px; 
+    height: 25px; 
+    margin: 2vw; 
+  }
+  
+  .contentSection { 
+    padding: 8vw 4vw; 
+    gap: 8vw; 
+  }
+  
+  .headingWrapper {
+    margin-bottom: 4vw;
+  }
+  
+  .mainHeading { 
+    font-size: 5.5vw; 
+    line-height: 6.5vw; 
+    max-width: 100%; 
+  }
+  
+  .sideBySideLayout { 
+    flex-direction: column; 
+    gap: 6vw; 
+  }
+  
+  .bioSection { 
+    gap: 4vw; 
+  }
+  
+  .bioText { 
+    font-size: 4vw; 
+    line-height: 5vw; 
+  }
+  
+  .missionSection { 
+    padding: 0; 
+    gap: 2vw; 
+  }
+  
+  .missionSection h3 { 
+    font-size: 6.5vw; 
+  }
+  
+  .missionItems { 
+    gap: 1.5vw; 
+  }
+  
+  .missionItem { 
+    gap: 2vw; 
+  }
+  
+  .missionDot { 
+    width: 8px; 
+    height: 8px; 
+    margin-top: 1vw; 
+  }
+  
+  .missionItem p { 
+    font-size: 4vw; 
+    line-height: 5vw; 
+  }
+  
+  .gooey { 
+    width: 62vw; 
+    height: 62vw; 
+  }
+}
