@@ -25,6 +25,33 @@
 .hero2{ animation-delay: -2s; }
 .hero3{ animation-delay: -4s; }
 
+.facultyWrapper {
+  position: relative;
+  margin-top: 4vw;
+}
+
+/* Lottie behind everything */
+.lottieFacultyBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 1; /* tweak visibility */
+}
+
+/* Cards on top of background */
+.faculty {
+  display: flex;
+  gap: 2vw;
+  position: relative;
+  z-index: 1; /* keep above animation */
+  justify-content: center;
+  align-items: stretch;
+}
+
+
 @keyframes morph {
   0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
   50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
