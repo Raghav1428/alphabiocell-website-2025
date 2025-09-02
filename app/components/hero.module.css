@@ -38,7 +38,15 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 1; /* tweak visibility */
+  opacity: 0.9; /* let lower helix show */
+  pointer-events: none; /* background only */
+}
+
+.helix1 {
+  transform: scale(1) rotate(0deg);
+}
+.helix2 {
+  transform: scale(1.2) rotate(0deg);
 }
 
 /* Cards on top of background */

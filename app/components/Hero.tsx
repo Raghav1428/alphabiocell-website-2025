@@ -1,7 +1,11 @@
 "use client"
 
-import { Player } from "@lottiefiles/react-lottie-player";
+import dynamic from 'next/dynamic';
 import styles from "./hero.module.css";
+const LottiePlayer = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), { 
+  ssr: false,
+});
+
 
 export default function Hero() {
   return (
@@ -28,17 +32,17 @@ export default function Hero() {
 
       <div className={styles.facultyWrapper}>
         {/* 🎬 Background animation */}
-        <Player
+        <LottiePlayer
           autoplay
           loop
           src="/DNAHelix.json"
-          className={styles.lottieFacultyBg}
+          className={`${styles.lottieFacultyBg} ${styles.helix1}`}
         />
-        <Player
+        <LottiePlayer
           autoplay
           loop
           src="/DNAHelix2.json"
-          className={styles.lottieFacultyBg}
+          className={`${styles.lottieFacultyBg} ${styles.helix2}`}
         />
 
         {/* Cards on top */}
