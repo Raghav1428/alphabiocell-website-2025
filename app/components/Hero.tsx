@@ -35,12 +35,14 @@ export default function Hero() {
         <LottiePlayer
           autoplay
           loop
+          speed={0.8}
           src="/DNAHelix.json"
           className={`${styles.lottieFacultyBg} ${styles.helix1}`}
         />
         <LottiePlayer
           autoplay
           loop
+          speed={0.8}
           src="/DNAHelix2.json"
           className={`${styles.lottieFacultyBg} ${styles.helix2}`}
         />
