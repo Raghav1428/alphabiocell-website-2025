@@ -31,9 +31,6 @@
   margin-right: auto;
 }
 
-/* ------------------------------ */
-/* 🔥 Fix background mismatch + add padding inside cards */
-/* ------------------------------ */
 .eventsSection :global(.md\:w-96),
 .eventsSection :global(.h-80) {
   background: #EFEAE3 !important;
@@ -41,40 +38,33 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   overflow: hidden;
-  padding: 1.5rem;   /* ✅ breathing room for text */
+  padding: 1.5rem;
   box-sizing: border-box;
 }
 
-/* 🔥 Force carousel background to match site */
 .eventsSection :global(.flex.w-full.overflow-x-scroll),
 .eventsSection :global(.relative.w-full),
 .eventsSection :global(.flex.flex-row.justify-start) {
   background: #EFEAE3 !important;
 }
 
-/* Optional spacing & hide scrollbar */
 .eventsSection :global(.flex.w-full.overflow-x-scroll) {
   padding: 2rem 0;
   background-color: #EFEAE3 !important;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none; 
 }
 .eventsSection :global(.flex.w-full.overflow-x-scroll::-webkit-scrollbar) {
-  display: none; /* Chrome/Safari */
+  display: none; 
 }
 
-/* Hide vertical scrollbar in modal content area */
 .eventsSection :global(.overflow-y-auto) {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .eventsSection :global(.overflow-y-auto::-webkit-scrollbar) {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 
-
-/* ------------------------------ */
-/* Expanded card content styling */
-/* ------------------------------ */
 .eventContent {
   padding: 3vw;
   background: #EFEAE3;
@@ -109,7 +99,7 @@
   font-weight: 600;
   color: #1a1a1a;
   margin: 0;
-  padding: 0.25rem 0;  /* tighter spacing */
+  padding: 0.25rem 0;
   text-align: center;
 }
 
@@ -158,7 +148,7 @@
   display: flex;
   flex-direction: column;
   gap: 2vw;
-  padding: 1.5vw 2vw; /* reduce top padding to remove extra gap */
+  padding: 1.5vw 2vw; 
   font-family: 'NeueHaasDisplayRoman', sans-serif;
 }
 
@@ -167,7 +157,7 @@
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 0.5vw;
-  display: none; /* Hide this as we're showing title in the modal header */
+  display: none;
 }
 
 .eventModalInfo {
@@ -238,9 +228,6 @@
   transform: scale(1.02);
 }
 
-/* ------------------------------ */
-/* Modal & Navigation Styling */
-/* ------------------------------ */
 .eventsSection :global(.fixed.inset-0.z-50) {
   background: rgba(0, 0, 0, 0.8) !important;
   z-index: 50 !important;
@@ -274,7 +261,7 @@
 
 .eventsSection :global(.text-neutral-700.md\\:text-5xl.dark\\:text-white) {
   color: #1a1a1a !important;
-  padding: 0.5rem 0; /* ✅ spacing for titles */
+  padding: 0.5rem 0; 
 }
 
 .eventsSection :global(.z-\[60\]) {
@@ -291,9 +278,6 @@
   opacity: 1 !important;
 }
 
-/* ------------------------------ */
-/* Responsive Design */
-/* ------------------------------ */
 @media (max-width: 1024px) {
   .eventsTitle {
     font-size: 6vw;

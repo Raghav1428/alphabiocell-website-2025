@@ -33,11 +33,6 @@ const EventContent = ({ event }: { event: ClubEvent }) => {
           )}
           
         </div>
-
-        <div className={styles.eventModalInfo}>
-          <span className={styles.eventDate}>{event.date}</span>
-          <span className={styles.eventLocation}>{event.location}</span>
-        </div>
         
         <p className={styles.eventDescription}>{event.description1}</p>
         
