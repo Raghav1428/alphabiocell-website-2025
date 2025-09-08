@@ -1,0 +1,440 @@
+.eventsSection {
+  min-height: 100vh;
+  background: #EFEAE3;
+  padding: 4vw 2vw;
+  position: relative;
+  color: #1a1a1a;
+}
+
+.eventsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eventsTitle {
+  font-size: 4vw;
+  line-height: 4.5vw;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1vw;
+  color: #1a1a1a;
+}
+
+.eventsSubtitle {
+  font-size: 1.2vw;
+  line-height: 1.6vw;
+  text-align: center;
+  margin-bottom: 4vw;
+  color: #666;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------ */
+/* 🔥 Fix background mismatch + add padding inside cards */
+/* ------------------------------ */
+.eventsSection :global(.md\:w-96),
+.eventsSection :global(.h-80) {
+  background: #EFEAE3 !important;
+  border: 0px solid #000000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 1.5rem;   /* ✅ breathing room for text */
+  box-sizing: border-box;
+}
+
+/* 🔥 Force carousel background to match site */
+.eventsSection :global(.flex.w-full.overflow-x-scroll),
+.eventsSection :global(.relative.w-full),
+.eventsSection :global(.flex.flex-row.justify-start) {
+  background: #EFEAE3 !important;
+}
+
+/* Optional spacing & hide scrollbar */
+.eventsSection :global(.flex.w-full.overflow-x-scroll) {
+  padding: 2rem 0;
+  background-color: #EFEAE3 !important;
+  scrollbar-width: none; /* Firefox */
+}
+.eventsSection :global(.flex.w-full.overflow-x-scroll::-webkit-scrollbar) {
+  display: none; /* Chrome/Safari */
+}
+
+/* Hide vertical scrollbar in modal content area */
+.eventsSection :global(.overflow-y-auto) {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.eventsSection :global(.overflow-y-auto::-webkit-scrollbar) {
+  display: none; /* Chrome/Safari */
+}
+
+
+/* ------------------------------ */
+/* Expanded card content styling */
+/* ------------------------------ */
+.eventContent {
+  padding: 3vw;
+  background: #EFEAE3;
+  border-radius: 20px;
+  color: #1a1a1a;
+  font-family: 'NeueHaasDisplayRoman', sans-serif;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.eventHeader {
+  margin-bottom: 1vw;
+  text-align: center;
+}
+
+.eventCategory {
+  display: inline-block;
+  background: #FE320A;
+  color: white;
+  padding: 0.5vw 1vw;
+  border-radius: 25px;
+  font-size: 0.9vw;
+  font-weight: 500;
+  margin-bottom: 1vw;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.eventTitle {
+  font-size: 2.5vw;
+  line-height: 2.8vw;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0.25rem 0;  /* tighter spacing */
+  text-align: center;
+}
+
+.eventDetails {
+  display: flex;
+  gap: 3vw;
+  align-items: flex-start;
+}
+
+.eventInfo {
+  flex: 1;
+}
+
+.eventMeta {
+  margin-bottom: 2vw;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8vw;
+  gap: 1vw;
+}
+
+.metaLabel {
+  font-weight: 600;
+  color: #FE320A;
+  font-size: 1vw;
+  min-width: 80px;
+}
+
+.metaValue {
+  color: #1a1a1a;
+  font-size: 1vw;
+}
+
+.eventDescription {
+  font-size: 1.1vw;
+  line-height: 1.8vw;
+  color: #1a1a1a;
+  margin-bottom: 1.5vw;
+  font-family: 'NeueHaasDisplayRoman', sans-serif;
+}
+
+.eventModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  padding: 1.5vw 2vw; /* reduce top padding to remove extra gap */
+  font-family: 'NeueHaasDisplayRoman', sans-serif;
+}
+
+.eventModalTitle {
+  font-size: 2.2vw;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5vw;
+  display: none; /* Hide this as we're showing title in the modal header */
+}
+
+.eventModalInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vw;
+  margin-bottom: 1vw;
+  font-size: 1vw;
+  color: #666;
+}
+
+.eventDate, .eventLocation {
+  display: inline-block;
+}
+
+.eventHighlights {
+  margin-bottom: 2vw;
+}
+
+.eventHighlights h4 {
+  font-size: 1.3vw;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1vw;
+}
+
+.eventHighlights ul {
+  list-style: none;
+  padding: 0;
+}
+
+.eventHighlights li {
+  font-size: 1vw;
+  line-height: 1.4vw;
+  color: #555;
+  margin-bottom: 0.5vw;
+  padding-left: 1.5vw;
+  position: relative;
+}
+
+.eventHighlights li::before {
+  content: "•";
+  color: #FE320A;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.eventImage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5vw 0;
+}
+
+.image {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(254, 50, 10, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.02);
+}
+
+/* ------------------------------ */
+/* Modal & Navigation Styling */
+/* ------------------------------ */
+.eventsSection :global(.fixed.inset-0.z-50) {
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 50 !important;
+}
+
+.eventsSection :global(.bg-white.dark\:bg-neutral-900) {
+  background: #EFEAE3 !important;
+  color: #1a1a1a !important;
+  border: 2px solid #FE320A;
+  box-shadow: 0 20px 60px rgba(254, 50, 10, 0.3);
+}
+
+.eventsSection :global(.text-black.dark\:text-white) {
+  color: #FE320A !important;
+}
+
+.eventsSection :global(.rounded-full.bg-gray-100) {
+  background: #FE320A !important;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.eventsSection :global(.rounded-full.bg-gray-100:hover) {
+  background: #d62a08 !important;
+  transform: scale(1.05);
+}
+
+.eventsSection :global(.h-6.w-6.text-gray-500) {
+  color: white !important;
+}
+
+.eventsSection :global(.text-neutral-700.md\\:text-5xl.dark\\:text-white) {
+  color: #1a1a1a !important;
+  padding: 0.5rem 0; /* ✅ spacing for titles */
+}
+
+.eventsSection :global(.z-\[60\]) {
+  z-index: 60 !important;
+}
+
+.eventsSection :global(.h-fit) {
+  height: fit-content !important;
+}
+
+.eventsSection :global(.fixed.inset-0.z-50.h-screen) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ------------------------------ */
+/* Responsive Design */
+/* ------------------------------ */
+@media (max-width: 1024px) {
+  .eventsTitle {
+    font-size: 6vw;
+    line-height: 6.5vw;
+  }
+  
+  .eventsSubtitle {
+    font-size: 1.8vw;
+    line-height: 2.2vw;
+    max-width: 80%;
+  }
+  
+  .eventTitle {
+    font-size: 3.5vw;
+    line-height: 4vw;
+  }
+  
+  .eventDetails {
+    flex-direction: column;
+    gap: 2vw;
+  }
+  
+  .eventImage {
+    flex: none;
+    width: 100%;
+  }
+  
+  .metaLabel,
+  .metaValue {
+    font-size: 1.3vw;
+  }
+  
+  .eventDescription {
+    font-size: 1.4vw;
+    line-height: 1.8vw;
+  }
+  
+  .eventHighlights h4 {
+    font-size: 1.6vw;
+  }
+  
+  .eventHighlights li {
+    font-size: 1.3vw;
+    line-height: 1.6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventsSection {
+    padding: 6vw 4vw;
+  }
+  
+  .eventsTitle {
+    font-size: 8vw;
+    line-height: 8.5vw;
+  }
+  
+  .eventsSubtitle {
+    font-size: 2.5vw;
+    line-height: 3vw;
+    max-width: 90%;
+    margin-bottom: 6vw;
+  }
+  
+  .eventTitle {
+    font-size: 5vw;
+    line-height: 5.5vw;
+  }
+  
+  .eventCategory {
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    margin-bottom: 1.5vw;
+  }
+  
+  .metaLabel,
+  .metaValue {
+    font-size: 2.5vw;
+  }
+  
+  .eventDescription {
+    font-size: 2.8vw;
+    line-height: 3.5vw;
+  }
+  
+  .eventHighlights h4 {
+    font-size: 3.2vw;
+  }
+  
+  .eventHighlights li {
+    font-size: 2.5vw;
+    line-height: 3vw;
+  }
+  
+  .eventContent {
+    padding: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .eventsSection {
+    padding: 8vw 5vw;
+  }
+  
+  .eventsTitle {
+    font-size: 10vw;
+    line-height: 10.5vw;
+  }
+  
+  .eventsSubtitle {
+    font-size: 3.5vw;
+    line-height: 4vw;
+    max-width: 100%;
+  }
+  
+  .eventTitle {
+    font-size: 6.5vw;
+    line-height: 7vw;
+  }
+  
+  .eventCategory {
+    font-size: 3vw;
+    padding: 1.5vw 2.5vw;
+  }
+  
+  .metaLabel,
+  .metaValue {
+    font-size: 3.2vw;
+  }
+  
+  .eventDescription {
+    font-size: 3.5vw;
+    line-height: 4.2vw;
+  }
+  
+  .eventHighlights h4 {
+    font-size: 4vw;
+  }
+  
+  .eventHighlights li {
+    font-size: 3.2vw;
+    line-height: 3.8vw;
+  }
+}
