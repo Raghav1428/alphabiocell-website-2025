@@ -1,7 +1,7 @@
 .eventsSection {
-  min-height: 100vh;
+  min-height: auto;
   background: #EFEAE3;
-  padding: 4vw 2vw;
+  padding: 2vw 2vw 4vw;
   position: relative;
   color: #1a1a1a;
 }
@@ -24,7 +24,7 @@
   font-size: 1.2vw;
   line-height: 1.6vw;
   text-align: center;
-  margin-bottom: 4vw;
+  margin-bottom: 2vw;
   color: #666;
   max-width: 60%;
   margin-left: auto;
