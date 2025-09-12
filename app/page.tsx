@@ -1,4 +1,3 @@
-// app/page.tsx
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
