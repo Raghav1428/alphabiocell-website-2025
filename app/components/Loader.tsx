@@ -14,7 +14,7 @@ export default function Loader() {
     <div className={`${styles.loader} ${off ? styles.hidden : ""}`}>
       <h1>BREATHE</h1>
       <h1>IN</h1>
-      <h1>OPORTUNITY</h1>
+      <h1>OPPORTUNITY</h1>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import { Events } from "./components/Events";
+import { Research } from "./components/Research";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           <Hero />
           <Marquee />
           <Events />
+          <Research />
         </main>
       </SmoothScrollProvider>
     </>

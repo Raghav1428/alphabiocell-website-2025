@@ -1,0 +1,160 @@
+.researchSection {
+  min-height: auto;
+  background: #EFEAE3;
+  padding: 2vw 2vw 4vw;
+  position: relative;
+  color: #1a1a1a;
+}
+
+.researchContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.researchTitle {
+  font-size: 4vw;
+  line-height: 4.5vw;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1vw;
+  color: #1a1a1a;
+}
+
+.researchSubtitle {
+  font-size: 1.2vw;
+  line-height: 1.6vw;
+  text-align: center;
+  margin-bottom: 2vw;
+  color: #666;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Mirror Events carousel card look === */
+.researchSection :global(.md\:w-96),
+.researchSection :global(.h-80) {
+  background: #EFEAE3 !important;
+  border: 0px solid #000000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.researchSection :global(.flex.w-full.overflow-x-scroll),
+.researchSection :global(.relative.w-full),
+.researchSection :global(.flex.flex-row.justify-start) {
+  background: #EFEAE3 !important;
+}
+
+.researchSection :global(.flex.w-full.overflow-x-scroll) {
+  padding: 2rem 0;
+  background-color: #EFEAE3 !important;
+  scrollbar-width: none;
+}
+.researchSection :global(.flex.w-full.overflow-x-scroll::-webkit-scrollbar) {
+  display: none;
+}
+
+/* Hide modal scrollbar inside content area */
+.researchSection :global(.overflow-y-auto) {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.researchSection :global(.overflow-y-auto::-webkit-scrollbar) {
+  display: none;
+}
+
+/* === Modal overrides to match Events === */
+.researchSection :global(.fixed.inset-0.z-50) {
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 50 !important;
+}
+
+.researchSection :global(.bg-white.dark\:bg-neutral-900) {
+  background: #EFEAE3 !important;
+  color: #1a1a1a !important;
+  border: 2px solid #FE320A;
+  box-shadow: 0 20px 60px rgba(254, 50, 10, 0.3);
+}
+
+.researchSection :global(.text-black.dark\:text-white) {
+  color: #FE320A !important;
+}
+
+.researchSection :global(.rounded-full.bg-gray-100) {
+  background: #FE320A !important;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.researchSection :global(.rounded-full.bg-gray-100:hover) {
+  background: #d62a08 !important;
+  transform: scale(1.05);
+}
+
+.researchSection :global(.h-6.w-6.text-gray-500) {
+  color: white !important;
+}
+
+.researchSection :global(.text-neutral-700.md\:text-5xl.dark\:text-white) {
+  color: #1a1a1a !important;
+  padding: 0.5rem 0;
+}
+
+.researchSection :global(.z-\[60\]) {
+  z-index: 60 !important;
+}
+
+.researchSection :global(.h-fit) {
+  height: fit-content !important;
+}
+
+.researchSection :global(.fixed.inset-0.z-50.h-screen) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === Zero-gap vertical image stack (unique to Research content) === */
+.stackWrapper {
+  width: 100%;
+  line-height: 0;
+  font-size: 0;
+}
+
+.imageStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stackImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 1024px) {
+  .researchTitle { font-size: 6vw; line-height: 6.5vw; }
+  .researchSubtitle { font-size: 1.8vw; line-height: 2.2vw; max-width: 80%; }
+}
+
+@media (max-width: 768px) {
+  .researchSection { padding: 6vw 4vw; }
+  .researchTitle { font-size: 8vw; line-height: 8.5vw; }
+  .researchSubtitle { font-size: 2.5vw; line-height: 3vw; max-width: 90%; margin-bottom: 6vw; }
+}
+
+@media (max-width: 480px) {
+  .researchSection { padding: 8vw 5vw; }
+  .researchTitle { font-size: 10vw; line-height: 10.5vw; }
+  .researchSubtitle { font-size: 3.5vw; line-height: 4vw; max-width: 100%; }
+}
