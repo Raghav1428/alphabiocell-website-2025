@@ -50,7 +50,7 @@ export default function Hero() {
         {/* Cards on top */}
         <div className={styles.faculty}>
           <div className={styles.card}>
-            <img src="/window.svg" alt="Faculty placeholder" />
+            <img src="Faculty/RameshPathySir.webp" alt="Faculty placeholder" />
             <div className={styles.info}>
               <h4>
                 <strong>Dr. Ramesh Pathy Manian</strong>
@@ -65,7 +65,7 @@ export default function Hero() {
           </div>
 
           <div className={styles.card}>
-            <img src="/window.svg" alt="Faculty placeholder" />
+            <img src="Faculty/SuthindiranSir.webp" alt="Faculty placeholder" />
             <div className={styles.info}>
               <h4>
                 <strong>Dr. Suthindiran K</strong>

@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 
-export const useOutsideClick = (
-  ref: React.RefObject<HTMLElement | null>,
+export const useOutsideClick = <T extends HTMLElement>(
+  ref: React.RefObject<T | null>,
   callback: (event: MouseEvent | TouchEvent) => void,
-  enabled: boolean = true
+  enabled: boolean = true,
 ) => {
   useEffect(() => {
     if (!enabled) return;
 
     const listener = (event: MouseEvent | TouchEvent) => {
-      if (!ref.current || ref.current.contains(event.target as Node)) {
+      const target = event.target as Node | null;
+      if (!ref.current || (target && ref.current.contains(target))) {
         return;
       }
       callback(event);
