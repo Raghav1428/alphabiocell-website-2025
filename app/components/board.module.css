@@ -28,3 +28,12 @@
 .boardRow + .boardRow {
   margin-top: 2.5rem !important;
 }
+
+.boardCard {
+  width: 260px;
+  max-width: 100%;
+}
+
+.boardRowSpacing {
+  margin-top: 2.5rem !important;
+}

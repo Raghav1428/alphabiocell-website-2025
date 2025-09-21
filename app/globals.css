@@ -42,6 +42,11 @@
   --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
+  /* Utility to force site font where components override it */
+  .site-font {
+    font-family: var(--font-neu) !important;
+  }
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

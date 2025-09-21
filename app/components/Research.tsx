@@ -162,8 +162,8 @@ export function Research() {
   return (
     <section className={styles.researchSection}>
       <div className={styles.researchContainer}>
-        <h2 className={styles.researchTitle}>Our Research Digest</h2>
-        <p className={styles.researchSubtitle}>A Journal Review Compendium</p>
+  <h2 className={`${styles.researchTitle} site-font`}>Our Research Digest</h2>
+  <p className={`${styles.researchSubtitle} site-font`}>A Journal Review Compendium</p>
         <Carousel items={items} />
       </div>
     </section>

@@ -70,7 +70,7 @@
   background: #EFEAE3;
   border-radius: 20px;
   color: #1a1a1a;
-  font-family: 'NeueHaasDisplayRoman', sans-serif;
+  font-family: var(--font-neu);
   border: none;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
@@ -141,7 +141,7 @@
   line-height: 1.8vw;
   color: #1a1a1a;
   margin-bottom: 1.5vw;
-  font-family: 'NeueHaasDisplayRoman', sans-serif;
+  font-family: var(--font-neu);
 }
 
 .eventModalContent {
@@ -149,7 +149,7 @@
   flex-direction: column;
   gap: 2vw;
   padding: 1.5vw 2vw; 
-  font-family: 'NeueHaasDisplayRoman', sans-serif;
+  font-family: var(--font-neu);
 }
 
 .eventModalTitle {

@@ -228,7 +228,7 @@ export const Card = ({
                     exit={{ opacity: 0 }}
                     ref={containerRef}
                     layoutId={layout ? `card-${card.title}` : undefined}
-                    className="relative z-[1010] h-fit max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-[#EFEAE3] font-sans shadow-xl"
+                    className="relative z-[1010] h-fit max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-[#EFEAE3] font-sans shadow-xl site-font"
                     role="dialog"
                     aria-modal="true"
                     aria-label={card.title}
@@ -276,7 +276,7 @@ export const Card = ({
         <div className="relative z-40 p-8 pt-10">
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl px-2"
+            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl px-2 site-font"
           >
             {card.title}
           </motion.p>
@@ -300,18 +300,53 @@ export const BlurImage = ({
   ...rest
 }: React.ImgHTMLAttributes<HTMLImageElement> & { src: string }) => {
   const [isLoading, setLoading] = useState(true);
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    // Preload using a dedicated Image object — this helps detect cached images synchronously
+    const pre = new Image();
+    pre.src = src;
+    if (pre.complete && pre.naturalWidth) {
+      if (!cancelled) setLoading(false);
+    } else {
+      pre.onload = () => {
+        if (!cancelled) setLoading(false);
+      };
+      pre.onerror = () => {
+        if (!cancelled) setLoading(false);
+      };
+    }
+
+    // Fallback: if ref already points to an element and it's complete
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth) {
+      if (!cancelled) setLoading(false);
+    }
+
+    return () => {
+      cancelled = true;
+      pre.onload = null;
+      pre.onerror = null;
+    };
+  }, [src]);
+  const filterStyle = isLoading ? "blur(6px)" : "none";
   return (
     <img
-      className={cn(
-        "h-full w-full transition duration-300",
-        isLoading ? "blur-sm" : "blur-0",
-        className,
-      )}
+      className={cn("h-full w-full", className)}
+      style={{
+        filter: filterStyle,
+        transition: "filter 300ms ease, opacity 200ms ease",
+        willChange: "filter, opacity, transform",
+        imageRendering: "auto",
+      }}
       onLoad={() => setLoading(false)}
+      ref={(el) => {
+        imgRef.current = el;
+      }}
       src={src}
       width={width}
       height={height}
-      loading="lazy"
+      loading="eager"
       decoding="async"
       alt={alt ? alt : "Background of a beautiful view"}
       {...rest}

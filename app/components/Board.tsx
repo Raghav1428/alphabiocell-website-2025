@@ -178,57 +178,104 @@ export function Board() {
       {/* Centered Board section with 3/4/4 rows and smaller cards */}
       <section className="w-full flex justify-center py-12">
         <div className="w-full max-w-6xl px-4">
-          <h2 className={styles.boardTitle}>
+          <h2 className={`${styles.boardTitle} site-font`}>
             Meet the Board
           </h2>
-          <p className={styles.boardSubtitle}>
+          <p className={`${styles.boardSubtitle} site-font`}>
             The passionate minds driving innovation and excellence in biotechnology
           </p>
-          {rows.map((row, rowIdx) => (
-            <div
-              key={`row-${rowIdx}`}
-              className={`${styles.boardRow} ${rowIdx === 0 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"}`}
-            >
-              {row.map((card) => (
-                <motion.div
-                  layoutId={`card-${card.title}-${id}`}
-                  key={card.title}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    console.log("[Board] Card clicked:", card.title, card);
-                    setActive(card);
-                  }}
-                  className="p-3 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-lg cursor-pointer"
-                >
-                  <div className="flex gap-3 flex-col w-full">
-                    <motion.div layoutId={`image-${card.title}-${id}`}>
-                      <img
-                        width={100}
-                        height={100}
-                        src={card.src}
-                        alt={card.title}
-                        className="h-40 w-full rounded-md object-cover object-top"
-                      />
+          {rows.map((row, rowIdx) => {
+            if (rowIdx === 0) {
+              return (
+                <div key={`row-${rowIdx}`} className="w-full flex justify-center gap-6">
+                  {row.map((card) => (
+                    <motion.div
+                      layoutId={`card-${card.title}-${id}`}
+                      key={card.title}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        console.log("[Board] Card clicked:", card.title, card);
+                        setActive(card);
+                      }}
+                      className={`${styles.boardCard} p-3 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-lg cursor-pointer`}
+                    >
+                      <div className="flex gap-3 flex-col w-full">
+                        <motion.div layoutId={`image-${card.title}-${id}`}>
+                          <img
+                            width={100}
+                            height={100}
+                            src={card.src}
+                            alt={card.title}
+                            className="h-40 w-full rounded-md object-cover object-top"
+                          />
+                        </motion.div>
+                        <div className="flex justify-center items-center flex-col">
+                          <motion.h3
+                            layoutId={`title-${card.title}-${id}`}
+                            className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-sm site-font"
+                          >
+                            {card.title}
+                          </motion.h3>
+                          <motion.p
+                            layoutId={`description-${card.description}-${id}`}
+                            className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-xs site-font"
+                          >
+                            {card.description}
+                          </motion.p>
+                        </div>
+                      </div>
                     </motion.div>
-                    <div className="flex justify-center items-center flex-col">
-                      <motion.h3
-                        layoutId={`title-${card.title}-${id}`}
-                        className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-sm"
-                      >
-                        {card.title}
-                      </motion.h3>
-                      <motion.p
-                        layoutId={`description-${card.description}-${id}`}
-                        className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-xs"
-                      >
-                        {card.description}
-                      </motion.p>
+                  ))}
+                </div>
+              );
+            }
+
+            return (
+              <div
+                key={`row-${rowIdx}`}
+                className={`${styles.boardRow} ${rowIdx === 0 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"} ${rowIdx > 0 ? styles.boardRowSpacing : ""}`}
+              >
+                {row.map((card) => (
+                  <motion.div
+                    layoutId={`card-${card.title}-${id}`}
+                    key={card.title}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      console.log("[Board] Card clicked:", card.title, card);
+                      setActive(card);
+                    }}
+                    className={`${styles.boardCard} p-3 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-lg cursor-pointer`}
+                  >
+                    <div className="flex gap-3 flex-col w-full">
+                      <motion.div layoutId={`image-${card.title}-${id}`}>
+                        <img
+                          width={100}
+                          height={100}
+                          src={card.src}
+                          alt={card.title}
+                          className="h-40 w-full rounded-md object-cover object-top"
+                        />
+                      </motion.div>
+                      <div className="flex justify-center items-center flex-col">
+                        <motion.h3
+                          layoutId={`title-${card.title}-${id}`}
+                          className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-sm"
+                        >
+                          {card.title}
+                        </motion.h3>
+                        <motion.p
+                          layoutId={`description-${card.description}-${id}`}
+                          className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-xs"
+                        >
+                          {card.description}
+                        </motion.p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          ))}
+                  </motion.div>
+                ))}
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

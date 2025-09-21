@@ -170,10 +170,10 @@ export function Events() {
   return (
     <section className={styles.eventsSection}>
       <div className={styles.eventsContainer}>
-        <h2 className={styles.eventsTitle}>
+        <h2 className={`${styles.eventsTitle} site-font`}>
           Discover Our Club Events
         </h2>
-        <p className={styles.eventsSubtitle}>
+        <p className={`${styles.eventsSubtitle} site-font`}>
           Join us in exploring the fascinating world of biotechnology and innovation
         </p>
         <Carousel items={events} />
