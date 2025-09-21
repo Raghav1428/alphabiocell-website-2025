@@ -16,7 +16,7 @@ export default function Hero() {
             We believe in tapping into the untapped — exploring the limitless
             opportunities biology offers across scientific domains.
             <br /> <br />
-            We are a technical club that innovates at the intersection of biology and are part of the Student Wellfare at <br /> Vellore Institute of Technology, vellore
+            We are a technical club that innovates at the intersection of biology and are part of the Student Wellfare at <br /> Vellore Institute of Technology, Vellore
           </h3>
         </div>
         <div className={styles.right}>
