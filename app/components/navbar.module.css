@@ -1,4 +1,5 @@
 .nav{ padding:1vw 2vw; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:100; }
+.logoGroup{ display:flex; align-items:center; gap:0.5vw; }
 .links{ display:flex; gap:1vw; }
 .links h4{ position:relative; padding:10px 20px; border:1px solid #0003; border-radius:50px; transition:.4s; overflow:hidden; }
 .links h4::after{ content:""; position:absolute; left:0; right:0; bottom:-100%; height:100%; background:#000; border-radius:50%; transition:.4s; }
@@ -7,8 +8,19 @@
 .links h4:hover a{ color:#fff; }
 .menuBtn{ display:none; }
 
-.logo{ max-width:220px; height:auto; }
-.logo.hidden{ opacity:0; transition:.3s; }
+.logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.logo1 {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.logo.hidden, .logo1.hidden { opacity:0; transition:.3s; }
 
 .full{
   position:fixed; inset:0 auto auto 0; height:100vh; width:100%;

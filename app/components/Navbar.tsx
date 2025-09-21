@@ -7,11 +7,18 @@ export default function Navbar() {
   return (
     <>
       <nav className={styles.nav}>
-        <img
-          className={`${styles.logo} ${open ? styles.hidden : ""}`}
-          src="./abcblacklogo.svg"
-          alt="logo"
-        />
+        <div className={styles.logoGroup}>
+          <img
+            className={`${styles.logo} ${open ? styles.hidden : ""}`}
+            src="./abcblacklogo.svg"
+            alt="logo"
+          />
+          <img
+            className={`${styles.logo1} ${open ? styles.hidden : ""}`}
+            src="./vit-logo.svg"
+            alt="logo"
+          />
+        </div>
         <div className={styles.links}>
           <h4><a href="#">Events</a></h4>
           <h4><a href="#">Research</a></h4>
