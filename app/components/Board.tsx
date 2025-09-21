@@ -20,18 +20,15 @@ export function Board() {
   }, []);
 
   useEffect(() => {
-    console.log("[Board] active state changed:", active);
 
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        console.log("[Board] Escape pressed - closing modal");
         setActive(false);
       }
     }
 
     if (active && typeof active === "object") {
       document.body.style.overflow = "hidden";
-      console.log("[Board] Modal open. Body scroll locked.");
 
       // Prevent immediate outside-click close from the opening click
       justOpenedRef.current = true;
@@ -40,7 +37,6 @@ export function Board() {
       }, 0);
     } else {
       document.body.style.overflow = "auto";
-      console.log("[Board] Modal closed. Body scroll restored.");
     }
 
     window.addEventListener("keydown", onKeyDown);
@@ -51,10 +47,8 @@ export function Board() {
     ref,
     () => {
       if (justOpenedRef.current) {
-        console.log("[Board] Ignored outside click (just opened)");
         return;
       }
-      console.log("[Board] Outside click detected - closing modal");
       setActive(null);
     },
     Boolean(active && typeof active === "object")
@@ -112,7 +106,6 @@ export function Board() {
                     <button
                       className="absolute top-3 right-3 z-[1020] flex h-8 w-8 items-center justify-center rounded-full bg-white text-black shadow"
                       onClick={() => {
-                        console.log("[Board] Close button clicked");
                         setActive(null);
                       }}
                       aria-label="Close"
@@ -194,7 +187,6 @@ export function Board() {
                       key={card.title}
                       onClick={(e) => {
                         e.stopPropagation();
-                        console.log("[Board] Card clicked:", card.title, card);
                         setActive(card);
                       }}
                       className={`${styles.boardCard} p-3 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-lg cursor-pointer`}
@@ -241,7 +233,6 @@ export function Board() {
                     key={card.title}
                     onClick={(e) => {
                       e.stopPropagation();
-                      console.log("[Board] Card clicked:", card.title, card);
                       setActive(card);
                     }}
                     className={`${styles.boardCard} p-3 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-lg cursor-pointer`}
